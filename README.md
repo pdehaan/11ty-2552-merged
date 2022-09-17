@@ -1,6 +1,6 @@
 # 11ty Merged Collections
 
-This repo merges some mock "dynamically" fetched content via <./src/_data/posts.json>, and merges it with some posts in the src/posts/*.njk directory and puts them all into a single `collections.notes` collection.
+This repo merges some mock "dynamically" fetched content via [src/_data/posts.json](src/_data/posts.json), and merges it with some posts in the src/posts/*.njk directory and puts them all into a single `collections.notes` collection.
 
 See the objectively boring src/posts/pagination.njk script, as well as it's front matter in the src/posts/pagination.11tydata.js template data file (since it uses some JavaScript for `eleventyComputed` values, and I prefer it to JavaScript front matter to shim the properties from the JSON data file into computed Eleventy properties).
 
