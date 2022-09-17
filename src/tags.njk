@@ -1,0 +1,22 @@
+---
+pagination:
+  data: collections.notesTags
+  size: 1
+  alias: tag
+  filter:
+    - notes
+    - notesTags
+permalink: "posts/tag/{{ tag | slugify }}/"
+eleventyExcludeFromCollections: true
+eleventyComputed:
+  title: "{{ tag }}"
+layout: layouts/base.njk
+---
+
+{# This weird live querying of collections only seems to work w/ Nunjucks syntax. #}
+{%- set posts = collections.dynamic.getFilteredByTags("notes", tag) -%}
+
+<h1>{{ title }}</h1>
+{% for post in posts %}
+  {% include "preview.njk" %}
+{% endfor %}

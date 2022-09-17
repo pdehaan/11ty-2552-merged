@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+---
+
+<article data-url="{{ page.url }}">
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
+  {{ content | safe }}
+  <footer>
+    <p data-tags>{{ tags | join(", ") }}</p>
+    <p><time>{{ page.date.toLocaleDateString() }}</time></p>
+  </footer>
+</article>
